@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: rgtest123.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_17231623611c4522a7d6bef0377b5d74 }}/weatherapp:${{ github.sha }}
-        file: ./Dockerfile
+        file: ./WebApplication1/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
