@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Security;
 
 namespace WebApplication1.Controllers
 {
@@ -28,6 +29,12 @@ namespace WebApplication1.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpGet("{id}")]
+        public string Get(string id)
+        {
+            return $"Helllo {id}";
         }
     }
 }
