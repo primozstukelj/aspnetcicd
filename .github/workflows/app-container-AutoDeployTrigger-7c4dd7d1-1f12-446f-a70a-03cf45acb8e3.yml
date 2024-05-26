@@ -41,6 +41,8 @@ jobs:
           containerAppName: app-container
           resourceGroup: rg-cicd-test
           imageToBuild: rgtest123.azurecr.io/app-container:${{ github.sha }}
+          # appPort: 8080
+          # ingressType: public
           _buildArgumentsKey_: |
             _buildArgumentsValues_
 

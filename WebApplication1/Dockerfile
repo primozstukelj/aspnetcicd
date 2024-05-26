@@ -3,8 +3,8 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER app
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
+EXPOSE 8080
+EXPOSE 8081
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
@@ -21,5 +21,6 @@ RUN dotnet publish "./WebApplication1.csproj" -c $BUILD_CONFIGURATION -o /app/pu
 
 FROM base AS final
 WORKDIR /app
+ENV EXPOSED_PORT=8080
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "WebApplication1.dll"]

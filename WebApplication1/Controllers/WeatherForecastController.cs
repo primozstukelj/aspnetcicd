@@ -34,7 +34,13 @@ namespace WebApplication1.Controllers
         [HttpGet("{id}")]
         public string Get(string id)
         {
-            return $"Helllo {id}";
+            return $"Helllo Kekec {id}";
+        }
+
+        [HttpGet("test/{id}")]
+        public string Get2(string id)
+        {
+            return $"Helllo Kekec {id}";
         }
     }
 }
