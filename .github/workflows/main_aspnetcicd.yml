@@ -15,6 +15,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+  
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '8.0'  # adjust this to your project's .NET version
+
+    - name: Restore dependencies
+      run: dotnet restore ./WebApplicationTest/WebApplicationTest.csproj  # adjust this to your project's path
+
+    - name: Run tests
+      run: dotnet test --no-restore ./WebApplicationTest/WebApplicationTest.csproj  # adjust this to your project's path
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
