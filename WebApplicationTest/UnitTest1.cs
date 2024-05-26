@@ -6,7 +6,7 @@ namespace WebApplicationTest
         public void Test1()
         {
             // test passes
-            Assert.True(true);
+            Assert.True(false);
         }
     }
 }
